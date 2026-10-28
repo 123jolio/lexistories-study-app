@@ -1,0 +1,9 @@
+{
+  "words": [
+    {"en": "resilient", "el": "ανθεκτικός", "example": "She was resilient after the setback.", "exampleGr": "Παρέμεινε ανθεκτική μετά τη δυσκολία.", "unit": "Παράδειγμα", "scene": "example"},
+    {"en": "glimpse", "el": "φευγαλέα ματιά", "example": "I caught a glimpse of the mountains.", "exampleGr": "Πήρα μια φευγαλέα ματιά στα βουνά.", "unit": "Παράδειγμα", "scene": "example"}
+  ],
+  "stories": [
+    {"id": "example", "name": "Μια νέα αρχή", "emoji": "🌄", "desc": "Παράδειγμα προσθήκης ιστορίας", "ids": ["resilient", "glimpse"], "en": "After the setback, she stayed {{resilient}}. At dawn, she caught a {{glimpse}} of the distant mountains.", "el": "Μετά τη δυσκολία, έμεινε ανθεκτική. Την αυγή, είδε φευγαλέα τα μακρινά βουνά."}
+  ]
+}
