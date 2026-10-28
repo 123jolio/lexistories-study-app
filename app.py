@@ -11,8 +11,8 @@ WEB_APP = APP_DIR / "index.html"
 
 def load_web_app() -> str:
     html = WEB_APP.read_text(encoding="utf-8")
-    story_dir = APP_DIR / "assets" / "stories"
-    for image_file in story_dir.glob("*.jpg"):
+    asset_dir = APP_DIR / "assets"
+    for image_file in asset_dir.rglob("*.jpg"):
         relative_path = image_file.relative_to(APP_DIR).as_posix()
         encoded = base64.b64encode(image_file.read_bytes()).decode("ascii")
         html = html.replace(relative_path, f"data:image/jpeg;base64,{encoded}")

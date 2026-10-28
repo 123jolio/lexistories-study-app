@@ -1,5 +1,5 @@
-const CACHE='lessons-v6';
-const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/stories/story-storm.jpg','./assets/stories/story-ruins.jpg','./assets/stories/story-civic.jpg','./assets/stories/story-planning.jpg','./assets/stories/story-team.jpg'];
+const CACHE='lessons-v7';
+const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/stories/story-storm.jpg','./assets/stories/story-ruins.jpg','./assets/stories/story-civic.jpg','./assets/stories/story-planning.jpg','./assets/stories/story-team.jpg','./assets/history/history-uprising-1821.jpg','./assets/history/history-ibrahim-1825.jpg','./assets/history/history-missolonghi-1826.jpg','./assets/history/history-diplomacy-1827.jpg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
 self.addEventListener('fetch',event=>{
