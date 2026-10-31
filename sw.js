@@ -1,5 +1,5 @@
-const CACHE='lessons-v25';
-const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/stories/story-storm.jpg','./assets/stories/story-ruins.jpg','./assets/stories/story-civic.jpg','./assets/stories/story-planning.jpg','./assets/stories/story-team.jpg','./assets/stories/story-hearing.jpg','./assets/stories/story-station.jpg','./assets/stories/story-warehouse.jpg','./assets/stories/story-lab-reaction.jpg','./assets/stories/story-committee.jpg','./assets/stories/story-emergency.jpg','./assets/stories/story-observatory.jpg','./assets/stories/story-survey.jpg','./assets/stories/story-community.jpg','./assets/stories/story-recovery.jpg','./assets/history/history-uprising-1821.jpg','./assets/history/history-ibrahim-1825.jpg','./assets/history/history-missolonghi-1826.jpg','./assets/history/history-diplomacy-1827.jpg','./assets/grammar/grammar-rather-leave-early.jpg','./assets/grammar/grammar-rather-other-person.jpg','./assets/grammar/grammar-rather-past-regret.jpg'];
+const CACHE='lessons-v26';
+const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
 self.addEventListener('fetch',event=>{
@@ -12,6 +12,9 @@ self.addEventListener('fetch',event=>{
       return response;
     }).catch(()=>caches.match(event.request).then(r=>r||caches.match('./index.html'))));
   }else{
-    event.respondWith(caches.match(event.request).then(r=>r||fetch(event.request)));
+    event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{
+      if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}
+      return response;
+    })));
   }
 });
