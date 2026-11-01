@@ -1,5 +1,5 @@
-const CACHE='lessons-v27';
-const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='lessons-v28';
+const FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/chemistry/acids-bases-module.css','./assets/chemistry/acids-bases-module.js'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
 self.addEventListener('fetch',event=>{
