@@ -1,0 +1,65 @@
+(() => {
+  'use strict';
+  const unit = 'Λεξιλόγιο · Σελίδες 66–70';
+  const rows = [
+    ['motivated','με κίνητρο, ενθουσιώδης','The motivated students practised every afternoon.','Οι μαθητές με κίνητρο εξασκούνταν κάθε απόγευμα.'],
+    ['compress','συμπιέζω, συντομεύω','We can compress these files before sending them.','Μπορούμε να συμπιέσουμε αυτά τα αρχεία πριν τα στείλουμε.'],
+    ['enforce','επιβάλλω την τήρηση νόμου ή κανόνα','The school must enforce its safety rules.','Το σχολείο πρέπει να επιβάλλει την τήρηση των κανόνων ασφαλείας.'],
+    ['postpone','αναβάλλω','They will postpone the picnic until Friday.','Θα αναβάλουν το πικνίκ μέχρι την Παρασκευή.'],
+    ['vastly','κατά πολύ, σε πολύ μεγάλο βαθμό','The new design is vastly better than the old one.','Το νέο σχέδιο είναι κατά πολύ καλύτερο από το παλιό.'],
+    ['subsequently','στη συνέχεια, αργότερα','She studied art and subsequently opened a gallery.','Σπούδασε τέχνη και στη συνέχεια άνοιξε μια γκαλερί.'],
+    ['supposedly','υποτίθεται, σύμφωνα με όσα λέγονται','The tunnel is supposedly haunted, but nobody has proof.','Το τούνελ υποτίθεται ότι είναι στοιχειωμένο, αλλά κανείς δεν έχει αποδείξεις.'],
+    ['coincidentally','κατά σύμπτωση','Coincidentally, we booked rooms in the same hotel.','Κατά σύμπτωση, κλείσαμε δωμάτια στο ίδιο ξενοδοχείο.'],
+    ['accuse','κατηγορώ κάποιον για κάτι','Do not accuse anyone of cheating without evidence.','Μην κατηγορείς κανέναν για αντιγραφή χωρίς αποδείξεις.'],
+    ['relieve','ανακουφίζω· απαλλάσσω από καθήκοντα','A short rest may relieve your tired muscles.','Μια σύντομη ανάπαυση μπορεί να ανακουφίσει τους κουρασμένους μυς σου.'],
+    ['reassure','καθησυχάζω, διαβεβαιώνω','The guide tried to reassure the nervous visitors.','Ο ξεναγός προσπάθησε να καθησυχάσει τους αγχωμένους επισκέπτες.'],
+    ['acquit','αθωώνω','The jury decided to acquit the defendant.','Οι ένορκοι αποφάσισαν να αθωώσουν τον κατηγορούμενο.'],
+    ['induction','εισαγωγική εκπαίδευση· πρόκληση διαδικασίας','New employees attend an induction on their first day.','Οι νέοι υπάλληλοι παρακολουθούν εισαγωγική εκπαίδευση την πρώτη ημέρα.'],
+    ['intake','πρόσληψη τροφής ή αέρα· αριθμός εισακτέων','The college increased its annual intake of students.','Το κολέγιο αύξησε τον ετήσιο αριθμό εισακτέων του.'],
+    ['influence','επιρροή· επηρεάζω','Her advice had a positive influence on my decision.','Η συμβουλή της είχε θετική επιρροή στην απόφασή μου.'],
+    ['income','εισόδημα','His monthly income covers the rent and bills.','Το μηνιαίο εισόδημά του καλύπτει το ενοίκιο και τους λογαριασμούς.'],
+    ['defective','ελαττωματικός','The shop replaced the defective charger.','Το κατάστημα αντικατέστησε τον ελαττωματικό φορτιστή.'],
+    ['despondent','αποκαρδιωμένος, απογοητευμένος','She felt despondent after another unsuccessful attempt.','Ένιωσε αποκαρδιωμένη μετά από άλλη μία αποτυχημένη προσπάθεια.'],
+    ['devious','δόλιος, ύπουλος','They uncovered a devious plan to steal the money.','Αποκάλυψαν ένα δόλιο σχέδιο για την κλοπή των χρημάτων.'],
+    ['divert','εκτρέπω, ανακατευθύνω','Police will divert traffic away from the damaged bridge.','Η αστυνομία θα εκτρέψει την κυκλοφορία μακριά από τη χαλασμένη γέφυρα.'],
+    ['banish','εξορίζω· διώχνω μια σκέψη','She tried to banish all doubts from her mind.','Προσπάθησε να διώξει κάθε αμφιβολία από το μυαλό της.'],
+    ['flush','κοκκινίζω· τραβώ το καζανάκι','His face began to flush with embarrassment.','Το πρόσωπό του άρχισε να κοκκινίζει από αμηχανία.'],
+    ['ban','απαγορεύω· απαγόρευση','The town will ban cars from the central square.','Η πόλη θα απαγορεύσει τα αυτοκίνητα στην κεντρική πλατεία.'],
+    ['flee','τρέπομαι σε φυγή, διαφεύγω','The villagers had to flee the approaching fire.','Οι χωρικοί αναγκάστηκαν να φύγουν για να γλιτώσουν από τη φωτιά που πλησίαζε.'],
+    ['appearance','εμφάνιση, όψη· παρουσία','The actor made a surprise appearance at our school.','Ο ηθοποιός έκανε μια απρόσμενη εμφάνιση στο σχολείο μας.'],
+    ['projection','πρόβλεψη· προβολή σε οθόνη','The sales projection suggests a small increase next year.','Η πρόβλεψη πωλήσεων δείχνει μικρή αύξηση την επόμενη χρονιά.'],
+    ['outlook','προοπτική· στάση ζωής· θέα','Despite the setback, she has an optimistic outlook on life.','Παρά την αναποδιά, έχει αισιόδοξη στάση απέναντι στη ζωή.'],
+    ['overview','συνοπτική παρουσίαση, επισκόπηση','The first chapter gives an overview of the whole course.','Το πρώτο κεφάλαιο δίνει μια συνοπτική παρουσίαση όλου του μαθήματος.'],
+    ['displace','εκτοπίζω· αντικαθιστώ','Rising water could displace families from their homes.','Η άνοδος του νερού θα μπορούσε να εκτοπίσει οικογένειες από τα σπίτια τους.'],
+    ['succumb','υποκύπτω','He refused to succumb to pressure from the group.','Αρνήθηκε να υποκύψει στην πίεση της ομάδας.'],
+    ['succeed','πετυχαίνω· διαδέχομαι','With steady practice, you can succeed in learning a language.','Με σταθερή εξάσκηση μπορείς να πετύχεις στην εκμάθηση μιας γλώσσας.'],
+    ['abolish','καταργώ','The council voted to abolish the unfair rule.','Το συμβούλιο ψήφισε να καταργήσει τον άδικο κανόνα.'],
+    ['generate','παράγω, δημιουργώ','These solar panels generate electricity for the school.','Αυτά τα φωτοβολταϊκά παράγουν ηλεκτρικό ρεύμα για το σχολείο.'],
+    ['formulate','διατυπώνω, καταρτίζω','First, we need to formulate a clear plan.','Πρώτα πρέπει να καταρτίσουμε ένα σαφές σχέδιο.'],
+    ['escalate','κλιμακώνω, οξύνομαι','An argument can escalate if nobody listens.','Μια διαφωνία μπορεί να οξυνθεί αν κανείς δεν ακούει.'],
+    ['elaborate','αναπτύσσω με λεπτομέρειες· περίτεχνος','Could you elaborate on your suggestion?','Μπορείς να αναπτύξεις την πρότασή σου με περισσότερες λεπτομέρειες;'],
+    ['deceive','εξαπατώ','The seller tried to deceive buyers with false photographs.','Ο πωλητής προσπάθησε να εξαπατήσει αγοραστές με ψεύτικες φωτογραφίες.'],
+    ['delude','δημιουργώ ψευδαισθήσεις, αυταπατώμαι','Do not delude yourself into thinking practice is unnecessary.','Μην αυταπατάσαι πιστεύοντας ότι η εξάσκηση είναι περιττή.'],
+    ['misconstrue','παρερμηνεύω','Please do not misconstrue my silence as agreement.','Σε παρακαλώ, μην παρερμηνεύσεις τη σιωπή μου ως συμφωνία.'],
+    ['mislead','παραπλανώ','An unclear headline can mislead readers.','Ένας ασαφής τίτλος μπορεί να παραπλανήσει τους αναγνώστες.'],
+    ['impulse','παρόρμηση','She bought the bright red hat on impulse.','Αγόρασε το κατακόκκινο καπέλο παρορμητικά.'],
+    ['pursue','καταδιώκω· επιδιώκω','He hopes to pursue a career in music.','Ελπίζει να ακολουθήσει μια σταδιοδρομία στη μουσική.'],
+    ['motivate','δίνω κίνητρο, παρακινώ','Small achievements can motivate us to keep learning.','Τα μικρά επιτεύγματα μπορούν να μας παρακινήσουν να συνεχίσουμε να μαθαίνουμε.'],
+    ['instill','ενσταλάζω σταδιακά μια ιδέα ή αξία','Good coaches instill confidence in their players.','Οι καλοί προπονητές ενσταλάζουν αυτοπεποίθηση στους παίκτες τους.'],
+    ['fundamental','θεμελιώδης, βασικός','Trust is fundamental to a strong friendship.','Η εμπιστοσύνη είναι θεμελιώδης για μια δυνατή φιλία.'],
+    ['formulation','διατύπωση· διαμόρφωση σχεδίου','The formulation of a fair policy takes time.','Η διαμόρφωση μιας δίκαιης πολιτικής απαιτεί χρόνο.'],
+    ['basement','υπόγειο','We keep our bicycles in the basement.','Φυλάμε τα ποδήλατά μας στο υπόγειο.'],
+    ['predecessor','προκάτοχος','The new headteacher thanked her predecessor.','Η νέα διευθύντρια ευχαρίστησε την προκάτοχό της.'],
+    ['absurd','παράλογος, γελοίος','It is absurd to expect a beginner to know everything.','Είναι παράλογο να περιμένουμε από έναν αρχάριο να τα γνωρίζει όλα.'],
+    ['inferior','κατώτερος σε ποιότητα ή επίπεδο','This cheap copy is inferior to the original.','Αυτό το φθηνό αντίγραφο είναι κατώτερο από το πρωτότυπο.'],
+    ['appropriate','κατάλληλος, αρμόζων','Choose appropriate shoes for the mountain walk.','Διάλεξε κατάλληλα παπούτσια για την πεζοπορία στο βουνό.'],
+    ['reluctant','απρόθυμος, διστακτικός','He was reluctant to speak in front of strangers.','Ήταν διστακτικός να μιλήσει μπροστά σε αγνώστους.']
+  ];
+  window.EnglishPages6670 = {
+    unit,
+    words: rows.map(([en, el, example, exampleGr]) => ({
+      id: 'pages66-70-' + en, en, el, example, exampleGr,
+      scene: 'pages66-70', unit
+    }))
+  };
+})();
