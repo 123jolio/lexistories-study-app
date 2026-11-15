@@ -57,6 +57,7 @@
 <script src="assets/english-pages66-70.js?v=48"></script>
 <script src="assets/english-final-test6.js?v=49"></script>
 <script src="assets/english-pages95-101.js?v=1"></script>
+<script src="assets/english-final-test8.js?v=1"></script>
 <script src="assets/english-speech.js?v=51"></script>
 <script src="assets/biology-motion.js"></script>
 <script src="assets/biology-illustrations.js"></script>
@@ -197,8 +198,8 @@ const initialWords=[
  ['impair','βλάπτω, εξασθενώ','Lack of sleep impairs concentration.','Η έλλειψη ύπνου εξασθενεί τη συγκέντρωση.','final3-prevention','Final Test 3'],
  ['stunt','εμποδίζω την ανάπτυξη· εντυπωσιακό κόλπο','Poor nutrition can stunt growth.','Η κακή διατροφή μπορεί να εμποδίσει την ανάπτυξη.','final3-prevention','Final Test 3'],
  ['limp','κουτσαίνω· χωλότητα','He limped off the pitch after the injury.','Κούτσανε βγαίνοντας από το γήπεδο μετά τον τραυματισμό.','final3-prevention','Final Test 3']
-].map(([en,el,example,exampleGr,scene,unit='Test 4'])=>({id:en,en,el,example,exampleGr,scene,unit})).concat(EnglishPages6670.words,EnglishFinalTest6.words,EnglishPages95101.words);
-const initialStories=[...EnglishPages6670.stories,...EnglishFinalTest6.stories,
+].map(([en,el,example,exampleGr,scene,unit='Test 4'])=>({id:en,en,el,example,exampleGr,scene,unit})).concat(EnglishPages6670.words,EnglishFinalTest6.words,EnglishPages95101.words,EnglishFinalTest8.words);
+const initialStories=[...EnglishPages6670.stories,...EnglishFinalTest6.stories,...EnglishPages95101.stories,...EnglishFinalTest8.stories,
  {id:'storm',emoji:'⛈️',name:'Η καταιγίδα στο χωριό',desc:'Καταιγίδα, φως και ένα ρυάκι',ids:['engulf','shatter','shiver','shimmer','subside','rivulet','dimmer'],en:'The storm {{engulfed:engulf}} the village. A window {{shattered:shatter}}, and I began to {{shiver}}. As the rain {{subsided:subside}}, a {{rivulet}} {{shimmered:shimmer}} outside. The lantern grew {{dimmer}}.',el:'Η καταιγίδα τύλιξε το χωριό. Ένα παράθυρο θρυμματίστηκε και άρχισα να τρέμω. Καθώς η βροχή υποχωρούσε, ένα ρυάκι λαμπύριζε έξω. Το φανάρι γινόταν πιο αμυδρό.'},
  {id:'ruins',emoji:'🏛️',name:'Η ανακάλυψη στα ερείπια',desc:'Ένα μυστικό στην παλιά πρόσοψη',ids:['terrain','spade','facade','conspicuous','elongate'],en:'The {{terrain}} was rocky. An archaeologist used a {{spade}} near the ancient {{facade}}. A {{conspicuous}} symbol caught her eye while the shadows began to {{elongate}}.',el:'Το έδαφος ήταν βραχώδες. Μια αρχαιολόγος χρησιμοποίησε φτυάρι κοντά στην αρχαία πρόσοψη. Ένα ευδιάκριτο σύμβολο τράβηξε την προσοχή της καθώς οι σκιές άρχισαν να μακραίνουν.'},
  {id:'civic',emoji:'⚖️',name:'Η διαμαρτυρία',desc:'Μια σύντομη ιστορία αλλαγής',ids:['overthrow','abolish','prevail','curtail','brandish','taunt'],en:'The crowd wanted to {{overthrow}} the ruler and {{abolish}} an unfair law. A guard {{brandished:brandish}} a sword and {{taunted:taunt}} them. Yet the people {{prevailed:prevail}}. The new council promised to {{curtail}} abuses.',el:'Το πλήθος ήθελε να ανατρέψει τον ηγέτη και να καταργήσει έναν άδικο νόμο. Ένας φρουρός κραδαίνοντας σπαθί το χλεύαζε. Όμως ο λαός επικράτησε. Το νέο συμβούλιο υποσχέθηκε να περιορίσει τις καταχρήσεις.'},
@@ -216,14 +217,15 @@ const initialStories=[...EnglishPages6670.stories,...EnglishFinalTest6.stories,
  {id:'recovery',emoji:'⚽',name:'Η επιστροφή στο γήπεδο',desc:'Πρόληψη, προσαρμογή και νέα πρόκληση',ids:['avoid','defeat','avert','prevent','adapt','admonish','dispute','grieve','grievance','challenge','impair','stunt','limp'],en:'After a difficult {{defeat}}, Alex began to {{limp}}. The therapist tried to {{prevent}} further strain and {{avert}} a longer absence, because another injury could {{impair}} movement and {{stunt}} progress. Alex had to {{adapt}} the exercises and {{avoid}} the rough field. The coach {{admonished:admonish}} two players during a {{dispute}} and listened to their {{grievance}}. The team still had time to {{grieve}} the loss, then accepted the next {{challenge}} together.',el:'Μετά από μια δύσκολη ήττα, ο Άλεξ άρχισε να κουτσαίνει. Η φυσικοθεραπεύτρια προσπάθησε να αποτρέψει μεγαλύτερη καταπόνηση και πιο μακρά απουσία, επειδή ένας ακόμη τραυματισμός θα μπορούσε να βλάψει την κίνηση και να εμποδίσει την πρόοδο. Ο Άλεξ έπρεπε να προσαρμόσει τις ασκήσεις και να αποφεύγει το ανώμαλο γήπεδο. Ο προπονητής επέπληξε δύο παίκτες κατά τη διάρκεια μιας διαφωνίας και άκουσε το παράπονό τους. Η ομάδα είχε ακόμη χρόνο να λυπηθεί για την ήττα και έπειτα αποδέχτηκε μαζί την επόμενη πρόκληση.'}
 ];
 const storyImages={storm:'assets/stories/story-storm.jpg',ruins:'assets/stories/story-ruins.jpg',civic:'assets/stories/story-civic.jpg',planning:'assets/stories/story-planning.jpg',team:'assets/stories/story-team.jpg',hearing:'assets/stories/story-hearing.jpg',station:'assets/stories/story-station.jpg',warehouse:'assets/stories/story-warehouse.jpg','lab-reaction':'assets/stories/story-lab-reaction.jpg',committee:'assets/stories/story-committee.jpg',emergency:'assets/stories/story-emergency.jpg',observatory:'assets/stories/story-observatory.jpg',survey:'assets/stories/story-survey.jpg',community:'assets/stories/story-community.jpg',recovery:'assets/stories/story-recovery.jpg'};
-Object.assign(storyImages,Object.fromEntries([...EnglishPages6670.stories,...EnglishFinalTest6.stories].map(story=>[story.id,story.image])));
+Object.assign(storyImages,Object.fromEntries([...EnglishPages6670.stories,...EnglishFinalTest6.stories,...EnglishPages95101.stories,...EnglishFinalTest8.stories].map(story=>[story.id,story.image])));
 const vocabularyGroupMeta={
  'Test 4':{title:'1η ομάδα λέξεων',short:'Ομάδα 1',subtitle:'Test 4',emoji:'🌩️'},
  'Λεξιλόγιο · Σελίδα 57':{title:'2η ομάδα λέξεων',short:'Ομάδα 2',subtitle:'Σελίδα 57',emoji:'🔦'},
  'Final Test 3':{title:'3η ομάδα λέξεων',short:'Ομάδα 3',subtitle:'Final Test 3',emoji:'🎯'},
  [EnglishPages6670.unit]:{title:'Νέο τεστ · Σελίδες 66–70',short:'Ομάδα 4',subtitle:'52 λέξεις · 8 ιστορίες · μικρό ή πλήρες τεστ',emoji:'🆕',fullTest:true},
  [EnglishFinalTest6.unit]:{title:'Final Test 6 · Νέο λεξιλόγιο',short:'Ομάδα 5',subtitle:'Σελίδες 79–85 · 62 λέξεις με μνημονικά · 9 ιστορίες',emoji:'📗',fullTest:true},
- [EnglishPages95101.unit]:{title:'Νέο λεξιλόγιο · Σελίδες 95–101',short:'Ομάδα 6',subtitle:'Λέξεις και εξάσκηση από τις νέες φωτογραφίες',emoji:'📙',fullTest:true}
+ [EnglishPages95101.unit]:{title:'Νέο λεξιλόγιο · Σελίδες 95–101',short:'Ομάδα 6',subtitle:'Λέξεις και εξάσκηση από τις νέες φωτογραφίες',emoji:'📙',fullTest:true},
+ [EnglishFinalTest8.unit]:{title:'Final Test 8 · Νέο λεξιλόγιο',short:'Ομάδα 7',subtitle:'Σελίδες 109–115 · λέξεις και εξάσκηση',emoji:'📕',fullTest:true}
 };
 const historyTimeline=[
  {year:'1821',title:'Έναρξη της Επανάστασης',text:'Η εξέγερση εξαπλώνεται στην Πελοπόννησο, τη Στερεά Ελλάδα και τα νησιά.'},
@@ -452,7 +454,7 @@ function migrateData(value){
  data.words=Array.isArray(data.words)?data.words:[];const wordKey=word=>vocabularyGroupMeta[word.unit]?.fullTest?word.id:normalize(word?.en||word?.id);const existingWords=new Set(data.words.map(wordKey));for(const word of initialWords){const key=wordKey(word);if(!existingWords.has(key)){data.words.push(clone(word));existingWords.add(key);}}
  const mnemonicById=new Map(EnglishFinalTest6.words.map(word=>[word.id,word.mnemonic]));for(const word of data.words){if(word.unit===EnglishFinalTest6.unit&&mnemonicById.has(word.id))word.mnemonic=clone(mnemonicById.get(word.id));}
  data.stories=Array.isArray(data.stories)?data.stories:[];const existingStories=new Set(data.stories.map(story=>String(story?.id||'')));for(const story of initialStories){if(!existingStories.has(story.id)){data.stories.push(clone(story));existingStories.add(story.id);}}
- for(const story of [...EnglishPages6670.stories,...EnglishFinalTest6.stories]){const index=data.stories.findIndex(saved=>saved.id===story.id);if(index>=0&&(Number(data.stories[index].revision)||0)<story.revision)data.stories[index]=clone(story);}
+ for(const story of [...EnglishPages6670.stories,...EnglishFinalTest6.stories,...EnglishPages95101.stories,...EnglishFinalTest8.stories]){const index=data.stories.findIndex(saved=>saved.id===story.id);if(index>=0&&(Number(data.stories[index].revision)||0)<story.revision)data.stories[index]=clone(story);}
  data.events=Array.isArray(data.events)?data.events:[];data.goal=Number(data.goal)||10;
  data.grammar={bestScore:Number(data.grammar?.bestScore)||0,lastScore:Number.isFinite(data.grammar?.lastScore)?Number(data.grammar.lastScore):null,attempts:Number(data.grammar?.attempts)||0};
  data.finalTest3={bestScore:Number(data.finalTest3?.bestScore)||0,lastScore:Number.isFinite(data.finalTest3?.lastScore)?Number(data.finalTest3.lastScore):null,attempts:Number(data.finalTest3?.attempts)||0};
